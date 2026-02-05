@@ -279,33 +279,33 @@ const Header = () => {
                     </CustomLink>
                   </li> */}
 
-                  <li className='nav-item'>
+                  {/* <li className='nav-item'>
                     <CustomLink to={`/list-clients/${userState?.user?.username}`}>
                       <b>List of clients</b>
                     </CustomLink>
-                  </li>
+                  </li> */}
 
-                  <li className='nav-item'>
+                  {/* <li className='nav-item'>
                     <CustomLink to={`/assign-agent`}>
                       <b>Assign Agent</b>
                     </CustomLink>
-                  </li>
+                  </li> */}
 
                   <li className='nav-item'>
                     <CustomLink to={'/market-analysis'}>
                       <b>Market Analysis</b>
                     </CustomLink>
                   </li>
-                  {(userState?.user?.role == "admin" ||
+                  {/* {(userState?.user?.role == "admin" ||
                     userParentAlldata?.paymode == "manual") && <li className='nav-item'>
                       <CustomLink to={'/txn'}>
                         <b>Auto</b>
                       </CustomLink>
-                    </li>}
+                    </li>} */}
 
 
 
-                  <li className='nav-item dropdown'>
+                  <li className='nav-item dropdown d-none'>
                     <a>
                       <b>Reports</b> <i className='fa fa-caret-down' />
                     </a>
@@ -354,7 +354,7 @@ const Header = () => {
                   </li>
 
                   {(userState?.user?.role == "admin" ||
-                    userParentAlldata?.paymode == "manual") && <li className='nav-item dropdown'>
+                    userParentAlldata?.paymode == "manual") && <li className='nav-item dropdown d-none'>
                       <a>
                         <b>Transactions</b> <i className='fa fa-caret-down' />
                       </a>
@@ -371,7 +371,7 @@ const Header = () => {
                         </li>
                       </ul>
                     </li>}
-                  <li className='nav-item dropdown'>
+                  <li className='nav-item dropdown d-none'>
                     <a>
                       <b>All Casino Market</b> <i className='fa fa-caret-down' />
                     </a>
@@ -393,7 +393,7 @@ const Header = () => {
                     </ul>
                   </li>
 
-                  <li className='nav-item dropdown'>
+                  <li className='nav-item dropdown d-none'>
                     <a>
                       <b> All Sport Market </b> <i className='fa fa-caret-down' />
                     </a>
@@ -426,37 +426,37 @@ const Header = () => {
                             <b>{'Block Markets'}</b>
                           </CustomLink>
                         </li>
-                        <li>
+                        {/* <li>
                           <CustomLink to='/messages' className='dropdown-item'>
                             <b>{'Messages'}</b>
                           </CustomLink>
-                        </li>
+                        </li> */}
                         <li>
                           <CustomLink to={'/sports-list/matches'} className='dropdown-item'>
                             <b>Add Match List</b>
                           </CustomLink>
                         </li>
 
-                        <li>
+                        {/* <li>
                           <CustomLink to='/casino-list' className='dropdown-item'>
                             <b>{'Casino List'}</b>
                           </CustomLink>
-                        </li>
+                        </li> */}
                       </>
                       )}
 
-                      {(userState?.user?.role === "admin" ||
+                      {/* {(userState?.user?.role === "admin" ||
                         userParentAlldata?.paymode === "manual") && <li>
                           <CustomLink to='/payment-method' className='dropdown-item'>
                             <b>{'Payment Method'}</b>
                           </CustomLink>
-                        </li>}
+                        </li>} */}
 
-                      <li>
+                      {/* <li>
                         <CustomLink to='/update-tv' className='dropdown-item'>
                           <b>{'Mange -TV'}</b>
                         </CustomLink>
-                      </li>
+                      </li> */}
 
 
 
@@ -464,11 +464,11 @@ const Header = () => {
                   </li>
 
 
-                  <li className='nav-item'>
+                  {/* <li className='nav-item'>
                     <CustomLink to={`/multi-login`}>
                       <b>Multi Login</b>
                     </CustomLink>
-                  </li>
+                  </li> */}
 
                   {/* <li className='nav-item'>
                     <CustomLink to={`/login-reports`}>
@@ -487,10 +487,10 @@ const Header = () => {
             <ul className='user-search list-unstyled'>
               <li className='username' ref={userMenuRef}>
                 <span onClick={() => setShowMenu(!showMenu)}>
-                  {userState?.user?.username} <i className='fa fa-caret-down' />
+                  result <i className='fa fa-caret-down' />
                 </span>
                 <ul style={{ display: showMenu ? 'block' : 'none' }}>
-                  <li>
+                  {/* <li>
                     <CustomLink to='/secure-auth'>
                       <b>Secure Auth Verify</b>
                     </CustomLink>
@@ -499,7 +499,7 @@ const Header = () => {
                     <CustomLink to='/change-password'>
                       <b>Change Password</b>
                     </CustomLink>
-                  </li>
+                  </li> */}
                   <li>
                     <a onClick={logoutUser} href='#'>
                       <b>Logout</b>
@@ -507,7 +507,7 @@ const Header = () => {
                   </li>
                 </ul>
               </li>
-              <li className='search'>
+              <li className='search d-none'>
                 <CustomAutoComplete
                   onSuggestionsFetchRequested={onSuggestionsFetchRequested}
                   onSelectUser={onSelectUser}

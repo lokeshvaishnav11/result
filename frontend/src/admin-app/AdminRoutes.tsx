@@ -68,19 +68,19 @@ const AdminRoutes = () => {
           element: <MainAdmin />,
           children: [
             { index: true, element: <ListClients /> },
-            { path: 'dashbaord', element: <AdminDashboard /> },
+            // { path: 'dashbaord', element: <AdminDashboard /> },
             { path: 'market-analysis', element: <AdminDashboard /> },
-            { path: 'odds/:matchId', element: <Odds /> },
-            ...['list-clients', 'list-clients/:username'].map((path) => ({
-              key: 'list-client',
-              path: path,
-              element: <ListClients />,
-            })),
-            ...['add-user', 'add-user/:username'].map((path) => ({
-              key: 'add-user',
-              path: path,
-              element: <AddUser />,
-            })),
+            // { path: 'odds/:matchId', element: <Odds /> },
+            // ...['list-clients', 'list-clients/:username'].map((path) => ({
+            //   key: 'list-client',
+            //   path: path,
+            //   element: <ListClients />,
+            // })),
+            // ...['add-user', 'add-user/:username'].map((path) => ({
+            //   key: 'add-user',
+            //   path: path,
+            //   element: <AddUser />,
+            // })),
             ...(userState.user.role === RoleType.admin || userState.user.role === RoleType.sadmin
               ? [
                 { path: 'sports-list/:url?', element: <SportsPage /> },
@@ -92,32 +92,32 @@ const AdminRoutes = () => {
                 { path: 'messages', element: <Message /> },
               ]
               : []),
-            { path: 'change-password', element: <ChangePassword /> },
-            { path: 'accountstatement', element: <AccountStatementAdmin /> },
+            // { path: 'change-password', element: <ChangePassword /> },
+            // { path: 'accountstatement', element: <AccountStatementAdmin /> },
 
-            { path: 'combined-dashboard', element: <CombinedDashboard /> },
-            { path: 'assign-agent', element: <AssignAgent /> },
-            { path: 'multi-login', element: <MultiLogin/> },
-            { path: 'secure-auth', element: <SecureAuth/> },
-            { path: 'txn', element: <Txn/> },
-
-
+            // { path: 'combined-dashboard', element: <CombinedDashboard /> },
+            // { path: 'assign-agent', element: <AssignAgent /> },
+            // { path: 'multi-login', element: <MultiLogin/> },
+            // { path: 'secure-auth', element: <SecureAuth/> },
+            // { path: 'txn', element: <Txn/> },
 
 
 
-            { path: 'profitloss', element: <ProfitLossAdmin /> },
-            { path: 'unsettledbet', element: <UnsetteleBetHistoryAdmin /> },
-            { path: 'unsettledbet/:type', element: <UnsetteleBetHistoryAdmin /> },
-            { path: 'casino/:gameCode', element: <CasinoWrapper /> },
-            { path: 'casino-list', element: <CasinoList /> },
-            { path: 'game-reports', element: <GameReportAdmin /> },
-            { path: 'depositstatement', element: <DepositStatementAdmin /> },
-            { path: 'withdrawstatement', element: <WithdrawStatementAdmin /> },
-            { path: 'payment-method', element: <Paymethod /> },
-            { path: 'update-whatsapp', element: <UpdateWhatsapp /> },
-            { path: "deleted-bets", element: <DeletedBetsUndo /> },
-            { path: "login-reports", element: <OperationAdmin /> },
-             {path: 'update-tv',element:<TvSettings/>}
+
+
+            // { path: 'profitloss', element: <ProfitLossAdmin /> },
+            // { path: 'unsettledbet', element: <UnsetteleBetHistoryAdmin /> },
+            // { path: 'unsettledbet/:type', element: <UnsetteleBetHistoryAdmin /> },
+            // { path: 'casino/:gameCode', element: <CasinoWrapper /> },
+            // { path: 'casino-list', element: <CasinoList /> },
+            // { path: 'game-reports', element: <GameReportAdmin /> },
+            // { path: 'depositstatement', element: <DepositStatementAdmin /> },
+            // { path: 'withdrawstatement', element: <WithdrawStatementAdmin /> },
+            // { path: 'payment-method', element: <Paymethod /> },
+            // { path: 'update-whatsapp', element: <UpdateWhatsapp /> },
+            // { path: "deleted-bets", element: <DeletedBetsUndo /> },
+            // { path: "login-reports", element: <OperationAdmin /> },
+            //  {path: 'update-tv',element:<TvSettings/>}
 
             // { path: "client-ledger", element: <ClientLedger/>}
 

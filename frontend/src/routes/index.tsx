@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRoutes } from 'react-router-dom'
+import { useNavigate, useRoutes } from 'react-router-dom'
 import AdminRoutes from '../admin-app/AdminRoutes'
 import Casino from '../pages/casino/casino'
 import CasinoOther from '../pages/casino/casinoOther'
@@ -13,6 +13,7 @@ import RG from '../pages/withdrawstatement/RG'
 import AviatorList from '../pages/CasinoList/AviatorList'
 import { element } from 'prop-types'
 import TvSettings from '../pages/Updatetv/updatetv'
+import authService from '../services/auth.service'
 
 const AccountStatement = React.lazy(() => import('../pages/AccountStatement/AccountStatement'))
 const BetHistory = React.lazy(() => import('../pages/BetHistory/BetHistory'))
@@ -44,6 +45,17 @@ const ResultList = React.lazy(() => import('../pages/CasinoList/component/_commo
 const SecurityAuth = React.lazy(() => import('../pages/Rules/SecurityAuth'))
 
 const Routers = () => {
+  const navigate = useNavigate()
+
+  // Check if the user is logged in
+  const isLoggedIn = authService.isLoggedIn()
+
+  React.useEffect(() => {
+    if (!isLoggedIn) {
+      navigate('/admin/login', { replace: true })
+    }
+  }, [isLoggedIn, navigate])
+  
   const routes = [
     {
       path: '/login',
@@ -71,31 +83,31 @@ const Routers = () => {
           children: [
             { index: true, element: <Dashboard /> },
             { path: 'dashbaord', element: <Dashboard /> },
-            { path: 'match/:sportId', element: <Dashboard /> },
-            { path: 'match/:sportId/:status?', element: <Dashboard /> },
-            { path: 'odds/:matchId', element: <Odds /> },
-            { path: 'button-values', element: <ButtonValues /> },
-            { path: '/changepassword', element: <ChangePassword /> },
-            { path: '/bethistory', element: <BetHistory /> },
-            { path: '/deposit', element: <Deposit /> },
-            { path: '/withdraw', element: <Withdraw /> },
-            { path: '/accountstatement', element: <AccountStatement /> },
-            { path: '/unsettledbet', element: <UnsetteleBetHistory /> },
-            { path: '/casinoreport', element: <CasinoReport /> },
-            { path: '/profitloss', element: <ProfitLoss /> },
-            { path: '/casino-games', element: <CasinoList /> },
-            { path: '/casino-in/:type', element: <Casino /> },
-            { path: '/casino-int/:type', element: <CasinoOther /> },
-            { path: '/rules', element: <Rules /> },
-            { path: '/casino/:gameCode/:matchId', element: <CasinoWrapper /> },
-            { path: '/casino/result', element: <ResultList /> },
-            { path: '/casino/result/:matchid', element: <ResultList /> },
-            { path: 'settings/security-auth', element: <SecurityAuth /> },
-            { path: '/depositstatement', element: <DepositStatement /> },
-            { path: '/withdrawstatement', element: <WithdrawStatement /> },
-            { path: '/terms-and-conditions', element: <TOS /> },
-            { path: '/responsible-gaming', element: <RG /> },
-            { path: '/aviator-list', element: <AviatorList /> },
+            // { path: 'match/:sportId', element: <Dashboard /> },
+            // { path: 'match/:sportId/:status?', element: <Dashboard /> },
+            // { path: 'odds/:matchId', element: <Odds /> },
+            // { path: 'button-values', element: <ButtonValues /> },
+            // { path: '/changepassword', element: <ChangePassword /> },
+            // { path: '/bethistory', element: <BetHistory /> },
+            // { path: '/deposit', element: <Deposit /> },
+            // { path: '/withdraw', element: <Withdraw /> },
+            // { path: '/accountstatement', element: <AccountStatement /> },
+            // { path: '/unsettledbet', element: <UnsetteleBetHistory /> },
+            // { path: '/casinoreport', element: <CasinoReport /> },
+            // { path: '/profitloss', element: <ProfitLoss /> },
+            // { path: '/casino-games', element: <CasinoList /> },
+            // { path: '/casino-in/:type', element: <Casino /> },
+            // { path: '/casino-int/:type', element: <CasinoOther /> },
+            // { path: '/rules', element: <Rules /> },
+            // { path: '/casino/:gameCode/:matchId', element: <CasinoWrapper /> },
+            // { path: '/casino/result', element: <ResultList /> },
+            // { path: '/casino/result/:matchid', element: <ResultList /> },
+            // { path: 'settings/security-auth', element: <SecurityAuth /> },
+            // { path: '/depositstatement', element: <DepositStatement /> },
+            // { path: '/withdrawstatement', element: <WithdrawStatement /> },
+            // { path: '/terms-and-conditions', element: <TOS /> },
+            // { path: '/responsible-gaming', element: <RG /> },
+            // { path: '/aviator-list', element: <AviatorList /> },
           
 
 
