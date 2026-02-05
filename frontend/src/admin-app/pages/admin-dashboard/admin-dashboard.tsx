@@ -3,19 +3,25 @@ import betService from '../../../services/bet.service'
 import { AxiosResponse } from 'axios'
 import mobileSubheader from '../_layout/elements/mobile-subheader'
 import CombinedDashboard from '../AccountStatement/CombinedDashboard'
+import sportsService from '../../../services/sports.service'
 // import betService from '../../../services/bet.service'
 
 const AdminDashboard = () => {
   const [marketdata, setmarketData] = React.useState([])
+    const [sdata, setsData] = React.useState([])
+
   React.useEffect(() => {
     betService.getMarketAnalysis().then((res: AxiosResponse) => {
       setmarketData(res.data.data)
     })
   }, [])
-   React.useEffect(()=>{
-      betService.lenadena().then((res:AxiosResponse<any>)  =>{
-        console.log(res,"res for lena dena jai hind !")
-      })
+  //  React.useEffect(()=>{
+  //     betService.lenadena().then((res:AxiosResponse<any>)  =>{
+  //       console.log(res,"res for lena dena jai hind !")
+  //     })
+  //   },[])
+     React.useEffect(()=>{
+    const sdata = sportsService.getSports();
     },[])
   const listItem = () => {
     const htmlRender: any = []
@@ -27,6 +33,13 @@ const AdminDashboard = () => {
               <a href={`/admin/odds/${Item.matchId}`}>
                 {Item.matchName} ({Item.betCount})
               </a>
+            </div>
+          </td>
+          <td>
+            <div>
+             
+                {Item.sportName} ({Item.betCount})
+           
             </div>
           </td>
           <td>
@@ -97,6 +110,9 @@ const AdminDashboard = () => {
                     <tr>
                       <th className='bg2 text-white' style={{ padding: '10px' }}>
                         Event Name
+                      </th>
+                      <th className='bg2 text-white' style={{ padding: '10px' }}>
+                       Sport Type
                       </th>
                       <th className='bg2 text-white' style={{ padding: '10px' }}>
                         Team

@@ -254,14 +254,14 @@ const Header = () => {
       <header>
         <div className='header-bottom'>
           <div className='container-fluid'>
-            <CustomLink to={'/'} className='logo'>
+            {/* <CustomLink to={'/'} className='logo'>
               <img src='/imgs/logo.png' />
-            </CustomLink>
-            <div className='side-menu-button' onClick={toggleDrawer}>
+            </CustomLink> */}
+            {/* <div className='side-menu-button' onClick={toggleDrawer}>
               <div className='bar1' />
               <div className='bar2' />
               <div className='bar3' />
-            </div>
+            </div> */}
             <nav className='navbar navbar-expand-md btco-hover-menu'>
               <div className='collapse navbar-collapse'>
                 <ul className='list-unstyled navbar-nav'

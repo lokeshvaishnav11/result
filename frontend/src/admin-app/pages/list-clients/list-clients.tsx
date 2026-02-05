@@ -728,7 +728,7 @@ const ListClients = () => {
                     className={`nav-link ${activeDeactive ? "active" : ""}`}
                     aria-current="page"
                     href="#"
-                    onClick={(e) => typesOfClients(e, "true")}
+                    onClick={(e) => typesOfClients(e, "false")}
                   >
                     Active
                   </a>
@@ -737,7 +737,7 @@ const ListClients = () => {
                   <a
                     className={`nav-link ${!activeDeactive ? "active" : ""}`}
                     href="#"
-                    onClick={(e) => typesOfClients(e, "false")}
+                    onClick={(e) => typesOfClients(e, "true")}
                   >
                     Deactive
                   </a>
