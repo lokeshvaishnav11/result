@@ -431,11 +431,11 @@ const Header = () => {
                             <b>{'Messages'}</b>
                           </CustomLink>
                         </li> */}
-                        <li>
+                        {/* <li>
                           <CustomLink to={'/sports-list/matches'} className='dropdown-item'>
                             <b>Add Match List</b>
                           </CustomLink>
-                        </li>
+                        </li> */}
 
                         {/* <li>
                           <CustomLink to='/casino-list' className='dropdown-item'>
